@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
+#define fastio cin.tie(0)->sync_with_stdio(0);
 using namespace std;
-#define fastio cin.tie(0)->sync_with_stdio(false);
 
 int main()
 {
@@ -10,24 +10,22 @@ int main()
     cin >> n;
     cin.ignore();
     while (n--)
-    {       
-        string a;
-        long long b = 0, k=0;
-        getline(cin, a);
-        for(int i = 0; i <= a.size(); i++)
+    {
+        int sum = 0, k = 0;
+        string st1;
+        getline(cin, st1);
+        for (int i = 0; i <= st1.size(); i++)
         {
-            if (a[i] != ' ' && i < a.size())
+            if (st1[i] != ' ' && i < st1.size())
             {
-                k = (k * 10 + (a[i] - '0'));
+                k = (k * 10 + (st1[i] - '0'));
             }
             else
-
             {
-                b += k;
+                sum += k;
                 k = 0;
             }
         }
-        cout << b << '\n';
+        cout << sum << '\n';
     }
-    return 0;
 }
